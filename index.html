@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customized Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== SECTION 1: LANDING ===================== -->
+  <section id="landing" class="active">
+    <div class="container">
+      <h1>Memorable<span class="accent">&</span>Strong</h1>
+      <p class="tagline">
+        Google gives you passwords you'll never remember. Your brain gives you
+        passwords hackers can crack in seconds. We built something in between —
+        passwords made from <strong>your own memories</strong>, strengthened with
+        real randomness.
+      </p>
+      <button id="start-btn" class="btn-primary">Start Creating Password</button>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 2: QUESTIONS ===================== -->
+  <section id="questions">
+    <div class="container">
+      <h2>Step 1: Which site is this for?</h2>
+
+      <div class="site-input-wrapper">
+        <input id="site-name" placeholder="e.g. Netflix, Gmail, Instagram..." autocomplete="off">
+      <div id="site-dropdown"></div>
+    </div>
+
+      <h2>Step 2: Pick exactly 3 questions</h2>
+      <p class="hint-text">Choose 3 you can answer instantly, from memory, without thinking twice.</p>
+
+      <div id="question-pool">
+        <!-- Question cards will be injected here by JavaScript -->
+      </div>
+
+      <div id="answer-inputs">
+        <!-- Answer input fields will appear here once 3 questions are selected -->
+      </div>
+
+      <button id="generate-btn" class="btn-primary" disabled>Generate My Password</button>
+    </div>
+    <div id="limit-popup">You've already selected 3 questions</div>
+  </section>
+
+  <!-- ===================== SECTION 3: ANSWERS ===================== -->
+  <section id="answers">
+  <div class="container">
+    <h2>Step 3: Answer your 3 questions</h2>
+    <p class="hint-text">Type whatever comes to mind first — no need to overthink it.</p>
+
+    <div id="answers-container"></div>
+
+    <button id="proceed-btn" class="btn-primary">Create My Password</button>
+    </div>
+    <div id="empty-warning-popup">Please answer all 3 questions before continuing.</div>
+  </section>
+  
+  <!-- ===================== SECTION 4: RESULT ===================== -->
+  <section id="result">
+    <div class="container">
+      <p class="result-label">Generated for <span id="result-site">—</span></p>
+      <div class="password-display" id="password-output">correct-horse-battery</div>
+
+      <div class="result-actions">
+        <button id="copy-btn" class="btn-secondary">Copy Password</button>
+        <button id="regenerate-btn" class="btn-secondary">Try Another Combination</button>
+      </div>
+
+      <button id="restart-btn" class="btn-link">Start Over</button>
+    </div>
+    <div id="copy-popup">Password copied!</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
